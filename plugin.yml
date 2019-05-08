@@ -1,0 +1,10 @@
+name: LeeesNC
+main: Leee.nc.Main
+description: LeeesNC [7.0]
+author: Nate Legault
+version: 7.0
+
+commands:
+  nc:
+  namecolour:
+    
