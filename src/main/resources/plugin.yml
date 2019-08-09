@@ -1,0 +1,8 @@
+name: LeeesNC
+version: @version@
+description: Change Players name color
+author: [Nate Legault, blockparole]
+main: Leee.nc.LeeesNC
+
+commands:
+  nc:
