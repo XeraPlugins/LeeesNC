@@ -1,8 +1,10 @@
 name: LeeesNC
 version: @version@
-description: Change Players name color
+description: Plugin that changes Players name color on their command.
 author: [Nate Legault, blockparole]
 main: Leee.nc.LeeesNC
 
 commands:
   nc:
+    description: Change your name color.
+    aliases: [namecolor, namecolour]
