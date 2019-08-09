@@ -9,14 +9,62 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import java.util.List;
+
 public class LeeesNC extends JavaPlugin implements Listener {
+
+    private List<String> allowedColorModifiers;
+    private List<String> allowedFormatModifiers;
 
     private boolean needPermission;
 
     public void onEnable() {
+
         loadConfig();
-        needPermission = getConfig().getBoolean("need-permission");
+
+        needPermission = getConfig().getBoolean("command-needs-permission");
+
+        boolean modAllowedBold = getConfig().getBoolean("modifier-allowed-bold");
+        boolean modAllowedItalic = getConfig().getBoolean("modifier-allowed-italic");
+        boolean modAllowedMagic = getConfig().getBoolean("modifier-allowed-magic");
+        boolean modAllowedStrike = getConfig().getBoolean("modifier-allowed-strikethrough");
+        boolean modAllowedUnderline = getConfig().getBoolean("modifier-allowed-underline");
+
+        allowedColorModifiers.add("aqua");
+        allowedColorModifiers.add("black");
+        allowedColorModifiers.add("blue");
+        allowedColorModifiers.add("dark-aqua");
+        allowedColorModifiers.add("dark-blue");
+        allowedColorModifiers.add("dark-gray");
+        allowedColorModifiers.add("dark-green");
+        allowedColorModifiers.add("dark-purple");
+        allowedColorModifiers.add("dark-red");
+        allowedColorModifiers.add("gold");
+        allowedColorModifiers.add("gray");
+        allowedColorModifiers.add("green");
+        allowedColorModifiers.add("light-purple");
+        allowedColorModifiers.add("red");
+        allowedColorModifiers.add("white");
+        allowedColorModifiers.add("yellow");
+
+        if (modAllowedBold) {
+            allowedFormatModifiers.add("bold");
+        }
+        if (modAllowedItalic) {
+            allowedFormatModifiers.add("italic");
+        }
+        if (modAllowedMagic) {
+            allowedFormatModifiers.add("magic");
+        }
+        if (modAllowedStrike) {
+            allowedFormatModifiers.add("strikethrough");
+        }
+        if (modAllowedUnderline) {
+            allowedFormatModifiers.add("underline");
+        }
+
         getServer().getPluginManager().registerEvents(this, this);
+
     }
 
     public boolean onCommand(CommandSender sender, Command command, String commandLabel, String[] args) {
@@ -614,16 +662,27 @@ public class LeeesNC extends JavaPlugin implements Listener {
 
     @EventHandler
     public void onJoin(PlayerJoinEvent e) {
+
         Player player = e.getPlayer();
         if (this.getConfig().getString(e.getPlayer().getName()) != null) {
             player.setDisplayName(this.getConfig().getString(player.getName()));
         }
+
     }
 
     private void loadConfig() {
-        getConfig().addDefault("need-permission", false);
+
+        getConfig().addDefault("command-needs-permission", false);
+        getConfig().addDefault("modifier-allowed-bold", true);
+        getConfig().addDefault("modifier-allowed-strikethrough", false);
+        getConfig().addDefault("modifier-allowed-underline", false);
+        getConfig().addDefault("modifier-allowed-italic", true);
+        getConfig().addDefault("modifier-allowed-magic", false);
+
         getConfig().options().copyDefaults(true);
+
         saveConfig();
+
     }
 
 }
