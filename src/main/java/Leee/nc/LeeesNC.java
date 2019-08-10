@@ -94,7 +94,7 @@ public class LeeesNC extends JavaPlugin implements Listener {
             }
         }
 
-        changePlayerNameColor(player, usedColorModifier, usedFormatModifiers, true);
+        changePlayerNameColor(player, usedColorModifier, usedFormatModifiers);
 
         return true;
 
@@ -127,7 +127,7 @@ public class LeeesNC extends JavaPlugin implements Listener {
 
     }
 
-    private void changePlayerNameColor(Player player, String color, List<String> formatters, boolean notify) {
+    private void changePlayerNameColor(Player player, String color, List<String> formatters) {
 
         ChatColor colorModifier = ChatColor.valueOf(color);
 
@@ -145,7 +145,7 @@ public class LeeesNC extends JavaPlugin implements Listener {
             fullModifiers.append(formatter);
         }
 
-        changePlayerNameColor(player, fullModifiers.toString(), notify);
+        changePlayerNameColor(player, fullModifiers.toString(), true);
 
     }
 
