@@ -1,5 +1,6 @@
 package Leee.nc;
 
+import javax.annotation.Nonnull;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
@@ -45,7 +46,8 @@ public class LeeesNC extends JavaPlugin implements Listener {
 
     }
 
-    public boolean onCommand(CommandSender sender, Command command, String commandLabel, String[] args) {
+    @Override
+    public boolean onCommand(@Nonnull CommandSender sender, Command command, @Nonnull String commandLabel, @Nonnull String[] args) {
 
         if (!command.getName().equalsIgnoreCase("nc")) {
             return false;
@@ -127,6 +129,7 @@ public class LeeesNC extends JavaPlugin implements Listener {
     private void changePlayerNameColor(Player player, String color, List<String> formatters) {
 
         ChatColor colorModifier = ChatColor.valueOf(color);
+
         List<ChatColor> formatModifier = new ArrayList<>();
 
         for (String formatter : formatters) {
@@ -158,10 +161,29 @@ public class LeeesNC extends JavaPlugin implements Listener {
 
     private void helpMessage(Player player) {
 
-        player.sendMessage("Please specify a valid color: " + String.join(", ", validColorModifiers));
+        StringBuilder fancyColorModifiers = new StringBuilder();
+        StringBuilder fancyFormatModifiers = new StringBuilder();
+
+        for (String color : validColorModifiers) {
+            fancyColorModifiers.append(ChatColor.valueOf(color));
+            fancyColorModifiers.append(color);
+            fancyColorModifiers.append(ChatColor.RESET);
+            fancyColorModifiers.append(", ");
+        }
+
+        player.sendMessage("Please specify a valid color: " + String.join(", ", fancyColorModifiers.substring(0, fancyColorModifiers.length() - 4)));
 
         if (allowedFormatModifiers.size() > 0) {
-            player.sendMessage("You can also use Formatters: " + String.join(", ", allowedFormatModifiers));
+
+            for (String formatter : allowedFormatModifiers) {
+                fancyFormatModifiers.append(ChatColor.valueOf(formatter));
+                fancyFormatModifiers.append(formatter);
+                fancyFormatModifiers.append(ChatColor.RESET);
+                fancyFormatModifiers.append(", ");
+            }
+
+            player.sendMessage("You can also use Formatters: " + String.join(", ", fancyFormatModifiers.substring(0, fancyFormatModifiers.length() - 4)));
+
         }
 
     }
