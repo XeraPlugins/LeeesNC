@@ -1,6 +1,5 @@
 package Leee.nc;
 
-import javax.annotation.Nonnull;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
@@ -10,6 +9,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import javax.annotation.Nonnull;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -60,6 +60,7 @@ public class LeeesNC extends JavaPlugin implements Listener {
         Player player = (Player) sender;
 
         if (needPermission && !player.hasPermission("Leee.nc")) {
+            player.sendMessage(ChatColor.YELLOW + "[LeeesNC] " + ChatColor.DARK_AQUA + "You do not have permission to perform this command!");
             return false;
         }
 
@@ -93,7 +94,7 @@ public class LeeesNC extends JavaPlugin implements Listener {
             }
         }
 
-        changePlayerNameColor(player, usedColorModifier, usedFormatModifiers);
+        changePlayerNameColor(player, usedColorModifier, usedFormatModifiers, true);
 
         return true;
 
@@ -106,7 +107,7 @@ public class LeeesNC extends JavaPlugin implements Listener {
         String modifiers = this.getConfig().getString(String.valueOf(player.getUniqueId()));
 
         if (modifiers != null && !modifiers.isEmpty()) {
-            changePlayerNameColor(player, modifiers);
+            changePlayerNameColor(player, modifiers, false);
         }
 
     }
@@ -126,7 +127,7 @@ public class LeeesNC extends JavaPlugin implements Listener {
 
     }
 
-    private void changePlayerNameColor(Player player, String color, List<String> formatters) {
+    private void changePlayerNameColor(Player player, String color, List<String> formatters, boolean notify) {
 
         ChatColor colorModifier = ChatColor.valueOf(color);
 
@@ -144,11 +145,11 @@ public class LeeesNC extends JavaPlugin implements Listener {
             fullModifiers.append(formatter);
         }
 
-        changePlayerNameColor(player, fullModifiers.toString());
+        changePlayerNameColor(player, fullModifiers.toString(), notify);
 
     }
 
-    private void changePlayerNameColor(Player player, String modifiers) {
+    private void changePlayerNameColor(Player player, String modifiers, boolean notify) {
 
         getLogger().info("Changing name of Player " + player.getName() + " to: " + modifiers + player.getName() + ChatColor.RESET);
 
@@ -156,6 +157,10 @@ public class LeeesNC extends JavaPlugin implements Listener {
 
         this.getConfig().set(String.valueOf(player.getUniqueId()), modifiers);
         this.saveConfig();
+
+        if (notify) {
+            player.sendMessage(ChatColor.YELLOW + "[LeeesNC] " + ChatColor.DARK_AQUA + "Your name is now: " + modifiers + player.getName());
+        }
 
     }
 
@@ -171,7 +176,7 @@ public class LeeesNC extends JavaPlugin implements Listener {
             fancyColorModifiers.append(", ");
         }
 
-        player.sendMessage("Please specify a valid color: " + String.join(", ", fancyColorModifiers.substring(0, fancyColorModifiers.length() - 4)));
+        player.sendMessage(ChatColor.YELLOW + "[LeeesNC] " + ChatColor.DARK_AQUA + "Please specify a valid color: " + ChatColor.RESET + String.join(", ", fancyColorModifiers.substring(0, fancyColorModifiers.length() - 4)));
 
         if (allowedFormatModifiers.size() > 0) {
 
@@ -182,7 +187,7 @@ public class LeeesNC extends JavaPlugin implements Listener {
                 fancyFormatModifiers.append(", ");
             }
 
-            player.sendMessage("You can also use Formatters: " + String.join(", ", fancyFormatModifiers.substring(0, fancyFormatModifiers.length() - 4)));
+            player.sendMessage(ChatColor.YELLOW + "[LeeesNC] " + ChatColor.DARK_AQUA + "You can also use Formatters: " + ChatColor.RESET + String.join(", ", fancyFormatModifiers.substring(0, fancyFormatModifiers.length() - 4)));
 
         }
 
