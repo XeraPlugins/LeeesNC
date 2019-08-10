@@ -90,9 +90,6 @@ public class LeeesNC extends JavaPlugin implements Listener {
             }
         }
 
-        getLogger().info(usedColorModifier);
-        getLogger().info(String.join(", ", usedFormatModifiers));
-
         changePlayerNameColor(player, usedColorModifier, usedFormatModifiers);
 
         return true;
@@ -103,9 +100,10 @@ public class LeeesNC extends JavaPlugin implements Listener {
     public void onJoin(PlayerJoinEvent event) {
 
         Player player = event.getPlayer();
+        String modifiers = this.getConfig().getString(String.valueOf(player.getUniqueId()));
 
-        if (this.getConfig().getString(String.valueOf(player.getUniqueId())) != null) {
-            player.setDisplayName(this.getConfig().getString(player.getName()));
+        if (modifiers != null && !modifiers.isEmpty()) {
+            changePlayerNameColor(player, modifiers);
         }
 
     }
@@ -134,29 +132,37 @@ public class LeeesNC extends JavaPlugin implements Listener {
             formatModifier.add(ChatColor.valueOf(formatter));
         }
 
-        StringBuilder formatString = new StringBuilder();
+        StringBuilder fullModifiers = new StringBuilder();
 
-        formatString.append(colorModifier);
+        fullModifiers.append(colorModifier);
 
         for (ChatColor formatter : formatModifier) {
-            formatString.append(formatter);
+            fullModifiers.append(formatter);
         }
 
-        player.setDisplayName("" + formatString + player.getName() + ChatColor.RESET);
+        changePlayerNameColor(player, fullModifiers.toString());
 
-        this.getConfig().set(String.valueOf(player.getUniqueId()), "" + formatString + player.getName() + ChatColor.RESET);
+    }
 
+    private void changePlayerNameColor(Player player, String modifiers) {
+
+        getLogger().info("Changing name color of Player " + player.getName() + " to " + modifiers + player.getName() + ChatColor.RESET);
+
+        player.setDisplayName(modifiers + player.getName() + ChatColor.RESET);
+
+        this.getConfig().set(String.valueOf(player.getUniqueId()), modifiers);
         this.saveConfig();
 
     }
 
     private void helpMessage(Player player) {
-        player.sendMessage("Please specify a valid color:");
-        player.sendMessage(String.join(", ", validColorModifiers));
+
+        player.sendMessage("Please specify a valid color: " + String.join(", ", validColorModifiers));
+
         if (allowedFormatModifiers.size() > 0) {
-            player.sendMessage("You can also use Formatters:");
-            player.sendMessage(String.join(", ", allowedFormatModifiers));
+            player.sendMessage("You can also use Formatters: " + String.join(", ", allowedFormatModifiers));
         }
+
     }
 
 }
