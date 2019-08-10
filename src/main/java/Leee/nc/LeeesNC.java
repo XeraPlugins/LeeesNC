@@ -16,7 +16,7 @@ public class LeeesNC extends JavaPlugin implements Listener {
 
     private boolean needPermission;
 
-    private String[] validColorModifiers = new String[]{"AQUA", "BLACK", "BLUE", "DARK-AQUA", "DARK-BLUE", "DARK-GRAY", "DARK-GREEN", "DARK-PURPLE", "DARK-RED", "GOLD", "GRAY", "GREEN", "LIGHT-PURPLE", "RED", "WHITE", "YELLOW"};
+    private String[] validColorModifiers = new String[]{"AQUA", "BLACK", "BLUE", "DARK_AQUA", "DARK_BLUE", "DARK_GRAY", "DARK_GREEN", "DARK_PURPLE", "DARK_RED", "GOLD", "GRAY", "GREEN", "LIGHT_PURPLE", "RED", "WHITE", "YELLOW"};
     private List<String> allowedFormatModifiers = new ArrayList<>();
 
     public void onEnable() {
@@ -67,6 +67,7 @@ public class LeeesNC extends JavaPlugin implements Listener {
         }
 
         String userInput = String.join(" ", args).toUpperCase();
+        userInput = userInput.replaceAll("LIGHT-", "LIGHT_").replaceAll("DARK-", "DARK_");
 
         String usedColorModifier = null;
 
@@ -146,7 +147,7 @@ public class LeeesNC extends JavaPlugin implements Listener {
 
     private void changePlayerNameColor(Player player, String modifiers) {
 
-        getLogger().info("Changing name color of Player " + player.getName() + " to " + modifiers + player.getName() + ChatColor.RESET);
+        getLogger().info("Changing name of Player " + player.getName() + " to: " + modifiers + player.getName() + ChatColor.RESET);
 
         player.setDisplayName(modifiers + player.getName() + ChatColor.RESET);
 
