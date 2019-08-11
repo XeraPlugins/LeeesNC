@@ -1,4 +1,5 @@
 # LeeesNC
+
 <a href="https://github.com/blockparole/LeeesNC/releases/latest" alt="Download"><img src="https://img.shields.io/github/downloads/blockparole/LeeesNC/latest/total.svg?label=download%20latest&style=popout-square" /></a>
 <a href="https://github.com/blockparole/LeeesNC" alt="Download"><img src="https://img.shields.io/github/languages/code-size/blockparole/LeeesNC.svg?label=repo%20size&style=popout-square" /></a>
 
@@ -37,4 +38,6 @@ modifier-allowed-underline: false
 modifier-allowed-italic: true
 modifier-allowed-magic: false
 9fb22b27-5fda-48ed-8a5a-ad6e1ff30d71: §2§l
-```
+```======
+Spigot name colour plugin for anarchy servers
+Please join my discord http://discord.6b6t.org and ask me before you make your own version or if you need help
