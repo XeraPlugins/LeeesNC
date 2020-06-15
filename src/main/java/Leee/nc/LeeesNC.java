@@ -3,17 +3,21 @@ package Leee.nc;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
+import org.bukkit.command.TabCompleter;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.bukkit.util.StringUtil;
 
 import javax.annotation.Nonnull;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
-public class LeeesNC extends JavaPlugin implements Listener {
+public class LeeesNC extends JavaPlugin implements Listener, TabCompleter {
 
     private boolean needPermission;
 
@@ -44,6 +48,7 @@ public class LeeesNC extends JavaPlugin implements Listener {
 
         getServer().getPluginManager().registerEvents(this, this);
 
+        this.getCommand("nc").setTabCompleter(new LeeesNC());
     }
 
     @Override
@@ -97,7 +102,30 @@ public class LeeesNC extends JavaPlugin implements Listener {
         changePlayerNameColor(player, usedColorModifier, usedFormatModifiers);
 
         return true;
+    }
 
+    @Override
+    public List<String> onTabComplete(CommandSender sender, Command command, String alias, String[] args) {
+        if (sender instanceof Player) {
+            Player player = (Player) sender;
+            final List<String> completions = new ArrayList<>();
+
+            // First argument
+            if (needPermission && !player.hasPermission("Leee.nc") && args.length == 1) {
+                StringUtil.copyPartialMatches(args[0], Arrays.asList(validColorModifiers), completions);
+                Collections.sort(completions);
+                return completions;
+            }
+
+            // All other arguments
+            if (needPermission && !player.hasPermission("Leee.nc") && args.length > 1) {
+                StringUtil.copyPartialMatches(args[args.length - 1], allowedFormatModifiers, completions);
+                Collections.sort(completions);
+                return completions;
+            }
+        }
+
+        return null;
     }
 
     @EventHandler
