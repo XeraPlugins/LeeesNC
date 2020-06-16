@@ -8,3 +8,13 @@ commands:
   nc:
     description: Change your name color.
     aliases: [namecolor, namecolour]
+permissions:
+  Leee.nc.*:
+    description: Gives access to all commands
+    children:
+      Leee.nc.use: true
+      Leee.nc.admin: true
+  Leee.nc.use:
+    description: Gives access to changing name color via the /nc command
+  Leee.nc.admin:
+    description: Gives access to admin commands like /nc reload
