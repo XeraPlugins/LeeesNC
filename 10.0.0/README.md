@@ -5,18 +5,18 @@
 
 A Minecraft Plugin that changes a Players name color on their command.  
 
-![screenshot](./images/help.png)
+![screenshot](https://i.imgur.com/JrDYh5H.png)
 
-Usage: `/nc color or /nc format-color`  
-Example: `/nc bold-aqua`  
+Usage: `/nc <color modifier + any amount of format modifiers>`  
+Example: `/nc ITALIC dark-red STRIKETHROUGH magic underline BOLD`  
 
 |Colors         |Format          |
 |---------------|----------------|
 |`AQUA`         |`BOLD`          |
 |`BLACK`        |`ITALIC`        |
-|`BLUE`         |`STRIKETHROUGH` |
-|`DARK_AQUA`    |`UNDERLINE`     |
-|`DARK_BLUE`    |                |
+|`BLUE`         |`MAGIC`         |
+|`DARK_AQUA`    |`STRIKETHROUGH` |
+|`DARK_BLUE`    |`UNDERLINE`     |
 |`DARK_GRAY`    |                |
 |`DARK_GREEN`   |                |
 |`DARK_PURPLE`  |                |
@@ -29,12 +29,15 @@ Example: `/nc bold-aqua`
 |`WHITE`        |                |
 |`YELLOW`       |                |
 
-Player name format is saved in the config file via the Playername:
+Player name format is saved in the config file via UUID:
 ```
-Leee: §4Leee§r
-```
-
----
-
+command-needs-permission: false
+modifier-allowed-bold: true
+modifier-allowed-strikethrough: false
+modifier-allowed-underline: false
+modifier-allowed-italic: true
+modifier-allowed-magic: false
+9fb22b27-5fda-48ed-8a5a-ad6e1ff30d71: §2§l
+```======
 Spigot name colour plugin for anarchy servers
 Please join my discord http://discord.6b6t.org and ask me before you make your own version or if you need help

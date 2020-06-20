@@ -1,9 +1,0 @@
-name: LeeesNC
-main: leee.nc.Main
-description: LeeesNC [10.0.1]
-author: Nate Legault
-version: 10.0.1
-
-commands:
-  nc:
-  namecolour:
