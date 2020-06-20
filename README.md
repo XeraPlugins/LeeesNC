@@ -14,9 +14,9 @@ Example: `/nc ITALIC dark-red STRIKETHROUGH magic underline BOLD`
 |---------------|----------------|
 |`AQUA`         |`BOLD`          |
 |`BLACK`        |`ITALIC`        |
-|`BLUE`         |`MAGIC`         |
-|`DARK_AQUA`    |`STRIKETHROUGH` |
-|`DARK_BLUE`    |`UNDERLINE`     |
+|`BLUE`         |`STRIKETHROUGH` |
+|`DARK_AQUA`    |`UNDERLINE`     |
+|`DARK_BLUE`    |                |
 |`DARK_GRAY`    |                |
 |`DARK_GREEN`   |                |
 |`DARK_PURPLE`  |                |
@@ -31,7 +31,7 @@ Example: `/nc ITALIC dark-red STRIKETHROUGH magic underline BOLD`
 
 Player name format is saved in the config file via the Playername:
 ```
-Leee: §2§l
+Leee: §4Leee§r
 ```
 
 ---
