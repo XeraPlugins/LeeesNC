@@ -7,8 +7,8 @@ A Minecraft Plugin that changes a Players name color on their command.
 
 ![screenshot](./images/help.png)
 
-Usage: `/nc <color modifier + any amount of format modifiers>`  
-Example: `/nc ITALIC dark-red STRIKETHROUGH magic underline BOLD`  
+Usage: `/nc color or /nc format-color`  
+Example: `/nc bold-aqua`  
 
 |Colors         |Format          |
 |---------------|----------------|
