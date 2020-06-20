@@ -29,15 +29,11 @@ Example: `/nc ITALIC dark-red STRIKETHROUGH magic underline BOLD`
 |`WHITE`        |                |
 |`YELLOW`       |                |
 
-Player name format is saved in the config file via UUID:
+Player name format is saved in the config file via the Playername:
 ```
-command-needs-permission: false
-modifier-allowed-bold: true
-modifier-allowed-strikethrough: false
-modifier-allowed-underline: false
-modifier-allowed-italic: true
-modifier-allowed-magic: false
-9fb22b27-5fda-48ed-8a5a-ad6e1ff30d71: §2§l
-```======
+Leee: §2§l
+```
+
+======
 Spigot name colour plugin for anarchy servers
 Please join my discord http://discord.6b6t.org and ask me before you make your own version or if you need help
