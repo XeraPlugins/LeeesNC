@@ -1,20 +1,14 @@
 name: LeeesNC
-version: @version@
-description: Plugin that changes Players name color on their command.
-author: [Nate Legault, blockparole]
-main: Leee.nc.LeeesNC
-
+version: 10.0.2
+main: leee.nc.Main
+api-version: 1.12
+authors: [Nate, Legault]
+description: Leees Name Colour Plugin
+website: https://www.6b6t.org
 commands:
   nc:
     description: Change your name color.
     aliases: [namecolor, namecolour]
 permissions:
-  Leee.nc.*:
-    description: Gives access to all commands
-    children:
-      Leee.nc.use: true
-      Leee.nc.admin: true
-  Leee.nc.use:
+  Leee.nc:
     description: Gives access to changing name color via the /nc command
-  Leee.nc.admin:
-    description: Gives access to admin commands like /nc reload
