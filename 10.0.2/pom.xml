@@ -6,7 +6,7 @@
 
         <groupId>Leee.nc</groupId>
         <artifactId>LeeesNC</artifactId>
-        <version>10.1.0</version>
+        <version>10.0.2</version>
         <packaging>jar</packaging>
 
         <name>LeeesNC</name>

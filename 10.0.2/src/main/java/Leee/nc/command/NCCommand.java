@@ -1,6 +1,6 @@
-package Leee.nc.command;
+package leee.nc.command;
 
-import Leee.nc.Main;
+import leee.nc.Main;
 import net.md_5.bungee.api.chat.ClickEvent;
 import net.md_5.bungee.api.chat.ComponentBuilder;
 import net.md_5.bungee.api.chat.TextComponent;
@@ -124,48 +124,7 @@ public class NCCommand implements CommandExecutor, TabExecutor {
                         Main.getPlugin(Main.class).saveConfig();
                         player.sendMessage(ChatColor.BLACK + "Your name is now black");
                         return true;
-                    } else if (args[0].equals("rainbow")) {
-                        List<ChatColor> colors = new ArrayList<>();
-
-                        colors.add(ChatColor.DARK_RED);
-                        colors.add(ChatColor.GOLD);
-                        colors.add(ChatColor.YELLOW);
-                        colors.add(ChatColor.DARK_GREEN);
-                        colors.add(ChatColor.BLUE);
-                        colors.add((ChatColor.DARK_BLUE));
-                        colors.add(ChatColor.DARK_PURPLE);
-
-                        StringBuilder builder = new StringBuilder();
-                        List<Character> chars = new ArrayList<>();
-
-                        for (int i = 0; i < player.getName().length(); i++){
-                            char c = player.getName().charAt(i);
-
-                            chars.add(c);
-                        }
-
-                        int i = 0;
-
-                        for (Character letter : chars) {
-                            if (i == colors.size()) {
-                                i = 0;
-                            }
-
-                            builder.append(colors.get(i)).append(letter);
-
-                            i++;
-                        }
-
-                        String newname = builder.toString();
-
-                        player.setDisplayName(newname + ChatColor.RESET);
-                        Main.getPlugin(Main.class).getConfig().set(player.getName(), newname + ChatColor.RESET);
-                        Main.getPlugin(Main.class).saveConfig();
-                        player.sendMessage("" + ChatColor.WHITE + "Your name is now rainbow");
-                        return true;
-                    } else
-
-                    if (args[0].equals("bold-red")) {
+                    } else if (args[0].equals("bold-red")) {
                         player.setDisplayName("" + ChatColor.RED + ChatColor.BOLD + player.getName() + ChatColor.RESET);
                         Main.getPlugin(Main.class).getConfig().set(player.getName(), "" + ChatColor.RED + ChatColor.BOLD + player.getName() + ChatColor.RESET);
                         Main.getPlugin(Main.class).saveConfig();
@@ -249,48 +208,7 @@ public class NCCommand implements CommandExecutor, TabExecutor {
                         Main.getPlugin(Main.class).saveConfig();
                         player.sendMessage("" + ChatColor.BLACK + ChatColor.BOLD + "Your name is now bold black");
                         return true;
-                    } else if (args[0].equals("bold-rainbow")) {
-                        List<ChatColor> colors = new ArrayList<>();
-
-                        colors.add(ChatColor.DARK_RED);
-                        colors.add(ChatColor.GOLD);
-                        colors.add(ChatColor.YELLOW);
-                        colors.add(ChatColor.DARK_GREEN);
-                        colors.add(ChatColor.BLUE);
-                        colors.add((ChatColor.DARK_BLUE));
-                        colors.add(ChatColor.DARK_PURPLE);
-
-                        StringBuilder builder = new StringBuilder();
-                        List<Character> chars = new ArrayList<>();
-
-                        for (int i = 0; i < player.getName().length(); i++){
-                            char c = player.getName().charAt(i);
-
-                            chars.add(c);
-                        }
-
-                        int i = 0;
-
-                        for (Character letter : chars) {
-                            if (i == colors.size()) {
-                                i = 0;
-                            }
-
-                            builder.append(colors.get(i)).append(ChatColor.BOLD).append(letter);
-
-                            i++;
-                        }
-
-                        String newname = builder.toString();
-
-                        player.setDisplayName(newname + ChatColor.RESET);
-                        Main.getPlugin(Main.class).getConfig().set(player.getName(), newname + ChatColor.RESET);
-                        Main.getPlugin(Main.class).saveConfig();
-                        player.sendMessage("" + ChatColor.WHITE + ChatColor.BOLD + "Your name is now bold-rainbow");
-                        return true;
-                    } else
-
-                    if (args[0].equals("italic-black")) {
+                    } else if (args[0].equals("italic-black")) {
                         player.setDisplayName("" + ChatColor.BLACK + ChatColor.ITALIC + player.getName() + ChatColor.RESET);
                         Main.getPlugin(Main.class).getConfig().set(player.getName(), "" + ChatColor.BLACK + ChatColor.ITALIC + player.getName() + ChatColor.RESET);
                         Main.getPlugin(Main.class).saveConfig();
@@ -380,48 +298,7 @@ public class NCCommand implements CommandExecutor, TabExecutor {
                         Main.getPlugin(Main.class).saveConfig();
                         player.sendMessage("" + ChatColor.WHITE + ChatColor.ITALIC + "Your name is now italic white");
                         return true;
-                    } else if (args[0].equals("italic-rainbow")) {
-                        List<ChatColor> colors = new ArrayList<>();
-
-                        colors.add(ChatColor.DARK_RED);
-                        colors.add(ChatColor.GOLD);
-                        colors.add(ChatColor.YELLOW);
-                        colors.add(ChatColor.DARK_GREEN);
-                        colors.add(ChatColor.BLUE);
-                        colors.add((ChatColor.DARK_BLUE));
-                        colors.add(ChatColor.DARK_PURPLE);
-
-                        StringBuilder builder = new StringBuilder();
-                        List<Character> chars = new ArrayList<>();
-
-                        for (int i = 0; i < player.getName().length(); i++){
-                            char c = player.getName().charAt(i);
-
-                            chars.add(c);
-                        }
-
-                        int i = 0;
-
-                        for (Character letter : chars) {
-                            if (i == colors.size()) {
-                                i = 0;
-                            }
-
-                            builder.append(colors.get(i)).append(ChatColor.ITALIC).append(letter);
-
-                            i++;
-                        }
-
-                        String newname = builder.toString();
-
-                        player.setDisplayName(newname + ChatColor.RESET);
-                        Main.getPlugin(Main.class).getConfig().set(player.getName(), newname + ChatColor.RESET);
-                        Main.getPlugin(Main.class).saveConfig();
-                        player.sendMessage("" + ChatColor.WHITE + ChatColor.ITALIC + "Your name is now italic-rainbow");
-                        return true;
-                    } else
-
-                    if (args[0].equals("italic-bold-white")) {
+                    } else if (args[0].equals("italic-bold-white")) {
                         player.setDisplayName("" + ChatColor.WHITE + ChatColor.ITALIC + ChatColor.BOLD + player.getName() + ChatColor.RESET);
                         Main.getPlugin(Main.class).getConfig().set(player.getName(), "" + ChatColor.WHITE + ChatColor.ITALIC + ChatColor.BOLD + player.getName() + ChatColor.RESET);
                         Main.getPlugin(Main.class).saveConfig();
@@ -511,48 +388,7 @@ public class NCCommand implements CommandExecutor, TabExecutor {
                         Main.getPlugin(Main.class).saveConfig();
                         player.sendMessage("" + ChatColor.DARK_RED + ChatColor.ITALIC + ChatColor.BOLD + "Your name is now italic bold dark red");
                         return true;
-                    } else if (args[0].equals("italic-bold-rainbow")) {
-                        List<ChatColor> colors = new ArrayList<>();
-
-                        colors.add(ChatColor.DARK_RED);
-                        colors.add(ChatColor.GOLD);
-                        colors.add(ChatColor.YELLOW);
-                        colors.add(ChatColor.DARK_GREEN);
-                        colors.add(ChatColor.BLUE);
-                        colors.add((ChatColor.DARK_BLUE));
-                        colors.add(ChatColor.DARK_PURPLE);
-
-                        StringBuilder builder = new StringBuilder();
-                        List<Character> chars = new ArrayList<>();
-
-                        for (int i = 0; i < player.getName().length(); i++){
-                            char c = player.getName().charAt(i);
-
-                            chars.add(c);
-                        }
-
-                        int i = 0;
-
-                        for (Character letter : chars) {
-                            if (i == colors.size()) {
-                                i = 0;
-                            }
-
-                            builder.append(colors.get(i)).append(ChatColor.ITALIC).append(ChatColor.BOLD).append(letter);
-
-                            i++;
-                        }
-
-                        String newname = builder.toString();
-
-                        player.setDisplayName(newname + ChatColor.RESET);
-                        Main.getPlugin(Main.class).getConfig().set(player.getName(), newname + ChatColor.RESET);
-                        Main.getPlugin(Main.class).saveConfig();
-                        player.sendMessage("" + ChatColor.WHITE + ChatColor.ITALIC + ChatColor.BOLD + "Your name is now italic-bold-rainbow");
-                        return true;
-                    } else
-
-                    if (args[0].equals("underline-dark-red")) {
+                    } else if (args[0].equals("underline-dark-red")) {
                         player.setDisplayName("" + ChatColor.DARK_RED + ChatColor.UNDERLINE + player.getName() + ChatColor.RESET);
                         Main.getPlugin(Main.class).getConfig().set(player.getName(), "" + ChatColor.DARK_RED + ChatColor.UNDERLINE + player.getName() + ChatColor.RESET);
                         Main.getPlugin(Main.class).saveConfig();
@@ -648,48 +484,7 @@ public class NCCommand implements CommandExecutor, TabExecutor {
                         Main.getPlugin(Main.class).saveConfig();
                         player.sendMessage("" + ChatColor.WHITE + ChatColor.UNDERLINE + "Your name is now underline white");
                         return true;
-                    } else if (args[0].equals("underline-rainbow")) {
-                        List<ChatColor> colors = new ArrayList<>();
-
-                        colors.add(ChatColor.DARK_RED);
-                        colors.add(ChatColor.GOLD);
-                        colors.add(ChatColor.YELLOW);
-                        colors.add(ChatColor.DARK_GREEN);
-                        colors.add(ChatColor.BLUE);
-                        colors.add((ChatColor.DARK_BLUE));
-                        colors.add(ChatColor.DARK_PURPLE);
-
-                        StringBuilder builder = new StringBuilder();
-                        List<Character> chars = new ArrayList<>();
-
-                        for (int i = 0; i < player.getName().length(); i++){
-                            char c = player.getName().charAt(i);
-
-                            chars.add(c);
-                        }
-
-                        int i = 0;
-
-                        for (Character letter : chars) {
-                            if (i == colors.size()) {
-                                i = 0;
-                            }
-
-                            builder.append(colors.get(i)).append(ChatColor.UNDERLINE).append(letter);
-
-                            i++;
-                        }
-
-                        String newname = builder.toString();
-
-                        player.setDisplayName(newname + ChatColor.RESET);
-                        Main.getPlugin(Main.class).getConfig().set(player.getName(), newname + ChatColor.RESET);
-                        Main.getPlugin(Main.class).saveConfig();
-                        player.sendMessage("" + ChatColor.WHITE + ChatColor.UNDERLINE + "Your name is now underline-rainbow");
-                        return true;
-                    } else
-
-                    if (args[0].equals("underline-bold-dark-red")) {
+                    } else if (args[0].equals("underline-bold-dark-red")) {
                         player.setDisplayName("" + ChatColor.DARK_RED + ChatColor.UNDERLINE + ChatColor.BOLD + player.getName() + ChatColor.RESET);
                         Main.getPlugin(Main.class).getConfig().set(player.getName(), "" + ChatColor.DARK_RED + ChatColor.UNDERLINE + ChatColor.BOLD + player.getName() + ChatColor.RESET);
                         Main.getPlugin(Main.class).saveConfig();
@@ -785,48 +580,103 @@ public class NCCommand implements CommandExecutor, TabExecutor {
                         Main.getPlugin(Main.class).saveConfig();
                         player.sendMessage("" + ChatColor.WHITE + ChatColor.UNDERLINE + ChatColor.BOLD + "Your name is now underline bold white");
                         return true;
-                    } else if (args[0].equals("underline-bold-rainbow")) {
-                        List<ChatColor> colors = new ArrayList<>();
-
-                        colors.add(ChatColor.DARK_RED);
-                        colors.add(ChatColor.GOLD);
-                        colors.add(ChatColor.YELLOW);
-                        colors.add(ChatColor.DARK_GREEN);
-                        colors.add(ChatColor.BLUE);
-                        colors.add((ChatColor.DARK_BLUE));
-                        colors.add(ChatColor.DARK_PURPLE);
-
-                        StringBuilder builder = new StringBuilder();
-                        List<Character> chars = new ArrayList<>();
-
-                        for (int i = 0; i < player.getName().length(); i++){
-                            char c = player.getName().charAt(i);
-
-                            chars.add(c);
-                        }
-
-                        int i = 0;
-
-                        for (Character letter : chars) {
-                            if (i == colors.size()) {
-                                i = 0;
-                            }
-
-                            builder.append(colors.get(i)).append(ChatColor.UNDERLINE).append(ChatColor.BOLD).append(letter);
-
-                            i++;
-                        }
-
-                        String newname = builder.toString();
-
-                        player.setDisplayName(newname + ChatColor.RESET);
-                        Main.getPlugin(Main.class).getConfig().set(player.getName(), newname + ChatColor.RESET);
+                    } else if (args[0].equals("underline-dark-red")) {
+                        player.setDisplayName("" + ChatColor.DARK_RED + ChatColor.UNDERLINE + player.getName() + ChatColor.RESET);
+                        Main.getPlugin(Main.class).getConfig().set(player.getName(), "" + ChatColor.DARK_RED + ChatColor.UNDERLINE + player.getName() + ChatColor.RESET);
                         Main.getPlugin(Main.class).saveConfig();
-                        player.sendMessage("" + ChatColor.WHITE + ChatColor.UNDERLINE + ChatColor.BOLD + "Your name is now underline-bold-rainbow");
+                        player.sendMessage("" + ChatColor.DARK_RED + ChatColor.UNDERLINE + "Your name is now underline dark red");
                         return true;
-                    } else
-
-                    if (args[0].equals("strike-bold-dark-red")) {
+                    } else if (args[0].equals("underline-red")) {
+                        player.setDisplayName("" + ChatColor.RED + ChatColor.UNDERLINE + player.getName() + ChatColor.RESET);
+                        Main.getPlugin(Main.class).getConfig().set(player.getName(), "" + ChatColor.RED + ChatColor.UNDERLINE + player.getName() + ChatColor.RESET);
+                        Main.getPlugin(Main.class).saveConfig();
+                        player.sendMessage("" + ChatColor.RED + ChatColor.UNDERLINE + "Your name is now underline red");
+                        return true;
+                    } else if (args[0].equals("underline-dark-blue")) {
+                        player.setDisplayName("" + ChatColor.DARK_BLUE + ChatColor.UNDERLINE + player.getName() + ChatColor.RESET);
+                        Main.getPlugin(Main.class).getConfig().set(player.getName(), "" + ChatColor.DARK_BLUE + ChatColor.UNDERLINE + player.getName() + ChatColor.RESET);
+                        Main.getPlugin(Main.class).saveConfig();
+                        player.sendMessage("" + ChatColor.DARK_BLUE + ChatColor.UNDERLINE + "Your name is now underline dark blue");
+                        return true;
+                    } else if (args[0].equals("underline-blue")) {
+                        player.setDisplayName("" + ChatColor.BLUE + ChatColor.UNDERLINE + player.getName() + ChatColor.RESET);
+                        Main.getPlugin(Main.class).getConfig().set(player.getName(), "" + ChatColor.BLUE + ChatColor.UNDERLINE + player.getName() + ChatColor.RESET);
+                        Main.getPlugin(Main.class).saveConfig();
+                        player.sendMessage("" + ChatColor.BLUE + ChatColor.UNDERLINE + "Your name is now underline blue");
+                        return true;
+                    } else if (args[0].equals("underline-dark-aqua")) {
+                        player.setDisplayName("" + ChatColor.DARK_AQUA + ChatColor.UNDERLINE + player.getName() + ChatColor.RESET);
+                        Main.getPlugin(Main.class).getConfig().set(player.getName(), "" + ChatColor.DARK_AQUA + ChatColor.UNDERLINE + player.getName() + ChatColor.RESET);
+                        Main.getPlugin(Main.class).saveConfig();
+                        player.sendMessage("" + ChatColor.DARK_AQUA + ChatColor.UNDERLINE + "Your name is now underline dark aqua");
+                        return true;
+                    } else if (args[0].equals("underline-aqua")) {
+                        player.setDisplayName("" + ChatColor.AQUA + ChatColor.UNDERLINE + player.getName() + ChatColor.RESET);
+                        Main.getPlugin(Main.class).getConfig().set(player.getName(), "" + ChatColor.AQUA + ChatColor.UNDERLINE + player.getName() + ChatColor.RESET);
+                        Main.getPlugin(Main.class).saveConfig();
+                        player.sendMessage("" + ChatColor.AQUA + ChatColor.UNDERLINE + "Your name is now underline aqua");
+                        return true;
+                    } else if (args[0].equals("underline-yellow")) {
+                        player.setDisplayName("" + ChatColor.YELLOW + ChatColor.UNDERLINE + player.getName() + ChatColor.RESET);
+                        Main.getPlugin(Main.class).getConfig().set(player.getName(), "" + ChatColor.YELLOW + ChatColor.UNDERLINE + player.getName() + ChatColor.RESET);
+                        Main.getPlugin(Main.class).saveConfig();
+                        player.sendMessage("" + ChatColor.YELLOW + ChatColor.UNDERLINE + "Your name is now underline yellow");
+                        return true;
+                    } else if (args[0].equals("underline-gold")) {
+                        player.setDisplayName("" + ChatColor.GOLD + ChatColor.UNDERLINE + player.getName() + ChatColor.RESET);
+                        Main.getPlugin(Main.class).getConfig().set(player.getName(), "" + ChatColor.GOLD + ChatColor.UNDERLINE + player.getName() + ChatColor.RESET);
+                        Main.getPlugin(Main.class).saveConfig();
+                        player.sendMessage("" + ChatColor.GOLD + ChatColor.UNDERLINE + "Your name is now underline gold");
+                        return true;
+                    } else if (args[0].equals("underline-pink")) {
+                        player.setDisplayName("" + ChatColor.LIGHT_PURPLE + ChatColor.UNDERLINE + player.getName() + ChatColor.RESET);
+                        Main.getPlugin(Main.class).getConfig().set(player.getName(), "" + ChatColor.LIGHT_PURPLE + ChatColor.UNDERLINE + player.getName() + ChatColor.RESET);
+                        Main.getPlugin(Main.class).saveConfig();
+                        player.sendMessage("" + ChatColor.LIGHT_PURPLE + ChatColor.UNDERLINE + "Your name is now underline pink");
+                        return true;
+                    } else if (args[0].equals("underline-purple")) {
+                        player.setDisplayName("" + ChatColor.DARK_PURPLE + ChatColor.UNDERLINE + player.getName() + ChatColor.RESET);
+                        Main.getPlugin(Main.class).getConfig().set(player.getName(), "" + ChatColor.DARK_PURPLE + ChatColor.UNDERLINE + player.getName() + ChatColor.RESET);
+                        Main.getPlugin(Main.class).saveConfig();
+                        player.sendMessage("" + ChatColor.DARK_PURPLE + ChatColor.UNDERLINE + "Your name is now underline purple");
+                        return true;
+                    } else if (args[0].equals("underline-black")) {
+                        player.setDisplayName("" + ChatColor.BLACK + ChatColor.UNDERLINE + player.getName() + ChatColor.RESET);
+                        Main.getPlugin(Main.class).getConfig().set(player.getName(), "" + ChatColor.BLACK + ChatColor.UNDERLINE + player.getName() + ChatColor.RESET);
+                        Main.getPlugin(Main.class).saveConfig();
+                        player.sendMessage("" + ChatColor.BLACK + ChatColor.UNDERLINE + "Your name is now underline black");
+                        return true;
+                    } else if (args[0].equals("underline-light-gray")) {
+                        player.setDisplayName("" + ChatColor.GRAY + ChatColor.UNDERLINE + player.getName() + ChatColor.RESET);
+                        Main.getPlugin(Main.class).getConfig().set(player.getName(), "" + ChatColor.GRAY + ChatColor.UNDERLINE + player.getName() + ChatColor.RESET);
+                        Main.getPlugin(Main.class).saveConfig();
+                        player.sendMessage("" + ChatColor.GRAY + ChatColor.UNDERLINE + "Your name is now underline light gray");
+                        return true;
+                    } else if (args[0].equals("underline-dark-gray")) {
+                        player.setDisplayName("" + ChatColor.DARK_GRAY + ChatColor.UNDERLINE + player.getName() + ChatColor.RESET);
+                        Main.getPlugin(Main.class).getConfig().set(player.getName(), "" + ChatColor.DARK_GRAY + ChatColor.UNDERLINE + player.getName() + ChatColor.RESET);
+                        Main.getPlugin(Main.class).saveConfig();
+                        player.sendMessage("" + ChatColor.DARK_GRAY + ChatColor.UNDERLINE + "Your name is now underline dark gray");
+                        return true;
+                    } else if (args[0].equals("underline-dark-green")) {
+                        player.setDisplayName("" + ChatColor.DARK_GREEN + ChatColor.UNDERLINE + player.getName() + ChatColor.RESET);
+                        Main.getPlugin(Main.class).getConfig().set(player.getName(), "" + ChatColor.DARK_GREEN + ChatColor.UNDERLINE + player.getName() + ChatColor.RESET);
+                        Main.getPlugin(Main.class).saveConfig();
+                        player.sendMessage("" + ChatColor.DARK_GREEN + ChatColor.UNDERLINE + "Your name is now underline dark green");
+                        return true;
+                    } else if (args[0].equals("underline-green")) {
+                        player.setDisplayName("" + ChatColor.GREEN + ChatColor.UNDERLINE + player.getName() + ChatColor.RESET);
+                        Main.getPlugin(Main.class).getConfig().set(player.getName(), "" + ChatColor.GREEN + ChatColor.UNDERLINE + player.getName() + ChatColor.RESET);
+                        Main.getPlugin(Main.class).saveConfig();
+                        player.sendMessage("" + ChatColor.GREEN + ChatColor.UNDERLINE + "Your name is now underline green");
+                        return true;
+                    } else if (args[0].equals("underline-white")) {
+                        player.setDisplayName("" + ChatColor.WHITE + ChatColor.UNDERLINE + player.getName() + ChatColor.RESET);
+                        Main.getPlugin(Main.class).getConfig().set(player.getName(), "" + ChatColor.WHITE + ChatColor.UNDERLINE + player.getName() + ChatColor.RESET);
+                        Main.getPlugin(Main.class).saveConfig();
+                        player.sendMessage("" + ChatColor.WHITE + ChatColor.UNDERLINE + "Your name is now underline white");
+                        return true;
+                    } else if (args[0].equals("strike-bold-dark-red")) {
                         player.setDisplayName("" + ChatColor.DARK_RED + ChatColor.STRIKETHROUGH + ChatColor.BOLD + player.getName() + ChatColor.RESET);
                         Main.getPlugin(Main.class).getConfig().set(player.getName(), "" + ChatColor.DARK_RED + ChatColor.STRIKETHROUGH + ChatColor.BOLD + player.getName() + ChatColor.RESET);
                         Main.getPlugin(Main.class).saveConfig();
@@ -922,48 +772,7 @@ public class NCCommand implements CommandExecutor, TabExecutor {
                         Main.getPlugin(Main.class).saveConfig();
                         player.sendMessage("" + ChatColor.WHITE + ChatColor.STRIKETHROUGH + ChatColor.BOLD + "Your name is now strike bold white");
                         return true;
-                    } else if (args[0].equals("strike-bold-rainbow")) {
-                        List<ChatColor> colors = new ArrayList<>();
-
-                        colors.add(ChatColor.DARK_RED);
-                        colors.add(ChatColor.GOLD);
-                        colors.add(ChatColor.YELLOW);
-                        colors.add(ChatColor.DARK_GREEN);
-                        colors.add(ChatColor.BLUE);
-                        colors.add((ChatColor.DARK_BLUE));
-                        colors.add(ChatColor.DARK_PURPLE);
-
-                        StringBuilder builder = new StringBuilder();
-                        List<Character> chars = new ArrayList<>();
-
-                        for (int i = 0; i < player.getName().length(); i++){
-                            char c = player.getName().charAt(i);
-
-                            chars.add(c);
-                        }
-
-                        int i = 0;
-
-                        for (Character letter : chars) {
-                            if (i == colors.size()) {
-                                i = 0;
-                            }
-
-                            builder.append(colors.get(i)).append(ChatColor.STRIKETHROUGH).append(ChatColor.BOLD).append(letter);
-
-                            i++;
-                        }
-
-                        String newname = builder.toString();
-
-                        player.setDisplayName(newname + ChatColor.RESET);
-                        Main.getPlugin(Main.class).getConfig().set(player.getName(), newname + ChatColor.RESET);
-                        Main.getPlugin(Main.class).saveConfig();
-                        player.sendMessage("" + ChatColor.WHITE + ChatColor.STRIKETHROUGH + ChatColor.BOLD + "Your name is now strike-bold-rainbow");
-                        return true;
-                    } else
-
-                    if (args[0].equals("strike-dark-red")) {
+                    } else if (args[0].equals("strike-dark-red")) {
                         player.setDisplayName("" + ChatColor.DARK_RED + ChatColor.STRIKETHROUGH + player.getName() + ChatColor.RESET);
                         Main.getPlugin(Main.class).getConfig().set(player.getName(), "" + ChatColor.DARK_RED + ChatColor.STRIKETHROUGH + player.getName() + ChatColor.RESET);
                         Main.getPlugin(Main.class).saveConfig();
@@ -1004,6 +813,12 @@ public class NCCommand implements CommandExecutor, TabExecutor {
                         Main.getPlugin(Main.class).getConfig().set(player.getName(), "" + ChatColor.YELLOW + ChatColor.STRIKETHROUGH + player.getName() + ChatColor.RESET);
                         Main.getPlugin(Main.class).saveConfig();
                         player.sendMessage("" + ChatColor.YELLOW + ChatColor.STRIKETHROUGH + "Your name is now strike bold yellow");
+                        return true;
+                    } else if (args[0].equals("strike-bold-gold")) {
+                        player.setDisplayName("" + ChatColor.GOLD + ChatColor.STRIKETHROUGH + player.getName() + ChatColor.RESET);
+                        Main.getPlugin(Main.class).getConfig().set(player.getName(), "" + ChatColor.GOLD + ChatColor.STRIKETHROUGH + player.getName() + ChatColor.RESET);
+                        Main.getPlugin(Main.class).saveConfig();
+                        player.sendMessage("" + ChatColor.GOLD + ChatColor.STRIKETHROUGH + "Your name is now strike bold gold");
                         return true;
                     } else if (args[0].equals("strike-pink")) {
                         player.setDisplayName("" + ChatColor.LIGHT_PURPLE + ChatColor.STRIKETHROUGH + player.getName() + ChatColor.RESET);
@@ -1053,45 +868,6 @@ public class NCCommand implements CommandExecutor, TabExecutor {
                         Main.getPlugin(Main.class).saveConfig();
                         player.sendMessage("" + ChatColor.WHITE + ChatColor.STRIKETHROUGH + "Your name is now strike bold white");
                         return true;
-                    } else if (args[0].equals("strike-rainbow")) {
-                        List<ChatColor> colors = new ArrayList<>();
-
-                        colors.add(ChatColor.DARK_RED);
-                        colors.add(ChatColor.GOLD);
-                        colors.add(ChatColor.YELLOW);
-                        colors.add(ChatColor.DARK_GREEN);
-                        colors.add(ChatColor.BLUE);
-                        colors.add((ChatColor.DARK_BLUE));
-                        colors.add(ChatColor.DARK_PURPLE);
-
-                        StringBuilder builder = new StringBuilder();
-                        List<Character> chars = new ArrayList<>();
-
-                        for (int i = 0; i < player.getName().length(); i++){
-                            char c = player.getName().charAt(i);
-
-                            chars.add(c);
-                        }
-
-                        int i = 0;
-
-                        for (Character letter : chars) {
-                            if (i == colors.size()) {
-                                i = 0;
-                            }
-
-                            builder.append(colors.get(i)).append(ChatColor.STRIKETHROUGH).append(letter);
-
-                            i++;
-                        }
-
-                        String newname = builder.toString();
-
-                        player.setDisplayName(newname + ChatColor.RESET);
-                        Main.getPlugin(Main.class).getConfig().set(player.getName(), newname + ChatColor.RESET);
-                        Main.getPlugin(Main.class).saveConfig();
-                        player.sendMessage("" + ChatColor.WHITE + ChatColor.STRIKETHROUGH + "Your name is now strike-rainbow");
-                        return true;
                     } else if (args[0].equals("reset")) {
                         player.setDisplayName("" + ChatColor.RESET+ player.getName() + ChatColor.RESET);
                         Main.getPlugin(Main.class).getConfig().set(player.getName(), "" + ChatColor.RESET + player.getName() + ChatColor.RESET);
@@ -1116,7 +892,7 @@ public class NCCommand implements CommandExecutor, TabExecutor {
                 player.spigot().sendMessage(new ComponentBuilder("(( ").color(ChatColor.YELLOW).append("strike").color(ChatColor.RESET).strikethrough(true).event(new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, "/nc strike-")).append("   ").strikethrough(false).color(ChatColor.RESET).append("strike-bold").strikethrough(true).bold(true).event(new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, "/nc strike-bold-")).append(" ))").strikethrough(false).bold(false).color(ChatColor.RESET).color(ChatColor.YELLOW).create());
                 player.spigot().sendMessage(new ComponentBuilder("(( ").color(ChatColor.YELLOW).append("bold").color(ChatColor.RESET).bold(true).event(new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, "/nc bold-")).append("   ").bold(false).color(ChatColor.RESET).append("italic").italic(true).event(new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, "/nc italic-")).append("   ").italic(false).color(ChatColor.RESET).append("italic-bold").italic(true).bold(true).event(new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, "/nc italic-bold-")).append(" ))").italic(false).bold(false).color(ChatColor.RESET).color(ChatColor.YELLOW).create());
                 player.spigot().sendMessage(new TextComponent(ChatColor.AQUA+ "(( Colours ))"));
-                player.spigot().sendMessage(new ComponentBuilder("(( ").color(ChatColor.YELLOW).append("red ").color(ChatColor.RED).event(new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, "/nc red")).append("dark-red ").color(ChatColor.DARK_RED).event(new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, "/nc dark-red")).append("green ").color(ChatColor.GREEN).event(new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, "/nc green")).append("dark-green ").color(ChatColor.DARK_GREEN).event(new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, "/nc dark-green")).append("rainbow").color(ChatColor.WHITE).event(new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, "/nc rainbow")).append(" ))").color(ChatColor.YELLOW).create());
+                player.spigot().sendMessage(new ComponentBuilder("(( ").color(ChatColor.YELLOW).append("red ").color(ChatColor.RED).event(new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, "/nc red")).append("dark-red ").color(ChatColor.DARK_RED).event(new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, "/nc dark-red")).append("green ").color(ChatColor.GREEN).event(new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, "/nc green")).append("dark-green").color(ChatColor.DARK_GREEN).event(new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, "/nc dark-green")).append(" ))").color(ChatColor.YELLOW ).create());
                 player.spigot().sendMessage(new ComponentBuilder("(( ").color(ChatColor.YELLOW).append("blue ").color(ChatColor.BLUE).event(new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, "/nc blue")).append("dark-blue ").color(ChatColor.DARK_BLUE).event(new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, "/nc dark-blue")).append("gold ").color(ChatColor.GOLD).event(new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, "/nc gold")).append("yellow ").color(ChatColor.YELLOW).event(new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, "/nc yellow")).append("black").color(ChatColor.BLACK).event(new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, "/nc black")).append(" ))").color(ChatColor.YELLOW).create());
                 player.spigot().sendMessage(new ComponentBuilder("(( ").color(ChatColor.YELLOW).append("purple ").color(ChatColor.DARK_PURPLE).event(new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, "/nc purple")).append("pink ").color(ChatColor.LIGHT_PURPLE).event(new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, "/nc pink")).append("gray ").color(ChatColor.GRAY).event(new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, "/nc gray")).append("aqua ").color(ChatColor.AQUA).event(new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, "/nc aqua")).append("dark-aqua ").color(ChatColor.DARK_AQUA).event(new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, "/nc dark-aqua")).append("white").color(ChatColor.WHITE).event(new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, "/nc white")).append(" ))").color(ChatColor.YELLOW).create());
                 player.spigot().sendMessage(new TextComponent(ChatColor.BLUE + "--------------------------------------------"));
@@ -1129,15 +905,19 @@ public class NCCommand implements CommandExecutor, TabExecutor {
     public List<String> onTabComplete(CommandSender sender, Command command, String alias, String[] args) {
         final List<String> completions = new ArrayList<>();
         final List<String> colors = new ArrayList<>(Arrays.asList(
-        "red", "dark-red", "green", "dark-green", "blue", "dark-blue", "pink", "white", "gray", "gold", "purple", "aqua", "yellow", "dark-aqua", "black", "rainbow",
-        "bold-white", "bold-red", "bold-dark-red", "bold-green", "bold-dark-green", "bold-blue", "bold-dark-blue", "bold-pink", "bold-gray", "bold-gold", "bold-purple", "bold-aqua", "bold-yellow", "bold-dark-aqua", "bold-black", "bold-rainbow",
-        "italic-black", "italic-red", "italic-dark-red", "italic-aqua", "italic-dark-aqua", "italic-blue", "italic-dark-blue", "italic-green", "italic-dark-green", "italic-pink", "italic-purple", "italic-gray", "italic-gold", "italic-yellow", "italic-white", "italic-rainbow",
-        "italic-bold-white", "italic-bold-blue", "italic-bold-dark-blue", "italic-bold-green", "italic-bold-dark-green", "italic-bold-aqua", "italic-bold-dark-aqua", "italic-bold-pink", "italic-bold-purple", "italic-bold-black", "italic-bold-gold", "italic-bold-yellow", "italic-bold-gray", "italic-bold-red", "italic-bold-dark-red", "italic-bold-rainbow",
-        "underline-dark-red", "underline-red", "underline-dark-blue", "underline-blue", "underline-dark-aqua", "underline-aqua", "underline-yellow", "underline-gold", "underline-pink", "underline-purple", "underline-black", "underline-light-gray", "underline-dark-gray", "underline-dark-green", "underline-green", "underline-white", "underline-rainbow",
-        "underline-bold-dark-red", "underline-bold-red", "underline-bold-dark-blue", "underline-bold-blue", "underline-bold-dark-aqua", "underline-bold-aqua", "underline-bold-yellow", "underline-bold-gold", "underline-bold-pink", "underline-bold-purple", "underline-bold-black", "underline-bold-light-gray", "underline-bold-dark-gray", "underline-bold-dark-green", "underline-bold-green", "underline-bold-white", "underline-bold-rainbow",
-        "strike-bold-dark-red", "strike-bold-red", "strike-bold-dark-blue", "strike-bold-blue", "strike-bold-dark-aqua", "strike-bold-aqua", "strike-bold-yellow", "strike-bold-gold", "strike-bold-pink", "strike-bold-purple", "strike-bold-black", "strike-bold-light-gray", "strike-bold-dark-gray", "strike-bold-dark-green", "strike-bold-green", "strike-bold-white", "strike-bold-rainbow",
-        "strike-dark-red", "strike-red", "strike-dark-blue", "strike-blue", "strike-dark-aqua", "strike-aqua", "strike-yellow", "strike-pink", "strike-purple", "strike-black", "strike-light-gray", "strike-dark-gray", "strike-dark-green", "strike-green", "strike-white", "strike-rainbow",
-        "reset"));
+        "red", "dark-red", "green", "dark-green", "blue", "dark-blue", "pink", "white", "gray", "gold", "purple", "aqua", "yellow", "bold-white", "dark-aqua", "black", "bold-red", "bold-dark-red", "bold-green", "bold-dark-green",
+        "bold-blue", "bold-dark-blue", "bold-pink", "bold-gray", "bold-gold", "bold-purple", "bold-aqua", "bold-yellow", "bold-dark-aqua", "bold-black", "italic-black", "italic-red", "italic-dark-red",
+        "italic-aqua", "italic-dark-aqua", "italic-blue", "italic-dark-blue", "italic-green", "italic-dark-green", "italic-pink", "italic-purple", "italic-gray", "italic-gold", "italic-yellow", "italic-white",
+        "italic-bold-white", "italic-bold-blue", "italic-bold-dark-blue", "italic-bold-green", "italic-bold-dark-green", "italic-bold-aqua", "italic-bold-dark-aqua", "italic-bold-pink", "italic-bold-purple",
+        "italic-bold-black", "italic-bold-gold", "italic-bold-yellow", "italic-bold-gray", "italic-bold-red", "italic-bold-dark-red", "underline-dark-red", "underline-red", "underline-dark-blue", "underline-blue",
+        "underline-dark-aqua", "underline-aqua", "underline-yellow", "underline-gold", "underline-pink", "underline-purple", "underline-black", "underline-light-gray", "underline-dark-gray", "underline-dark-green",
+        "underline-green", "underline-white", "underline-bold-dark-red", "underline-bold-red", "underline-bold-dark-blue", "underline-bold-blue", "underline-bold-dark-aqua", "underline-bold-aqua", "underline-bold-yellow",
+        "underline-bold-gold", "underline-bold-pink", "underline-bold-purple", "underline-bold-black", "underline-bold-light-gray", "underline-bold-dark-gray", "underline-bold-dark-green", "underline-bold-green",
+        "underline-bold-white", "underline-dark-red", "underline-red", "underline-dark-blue", "underline-blue", "underline-dark-aqua", "underline-aqua", "underline-yellow", "underline-gold", "underline-pink",
+        "underline-purple", "underline-black", "underline-light-gray", "underline-dark-gray", "underline-dark-green", "underline-green", "underline-white", "strike-bold-dark-red", "strike-bold-red",
+        "strike-bold-dark-blue", "strike-bold-blue", "strike-bold-dark-aqua", "strike-bold-aqua", "strike-bold-yellow", "strike-bold-gold", "strike-bold-pink", "strike-bold-purple", "strike-bold-black",
+        "strike-bold-light-gray", "strike-bold-dark-gray", "strike-bold-dark-green", "strike-bold-green", "strike-bold-white", "strike-dark-red", "strike-red", "strike-dark-blue", "strike-blue", "strike-dark-aqua",
+        "strike-aqua", "strike-yellow", "strike-bold-gold", "strike-pink", "strike-purple", "strike-black", "strike-light-gray", "strike-dark-gray", "strike-dark-green", "strike-green", "strike-white", "reset"));
 
         if (sender instanceof Player) {
             Player player = (Player) sender;

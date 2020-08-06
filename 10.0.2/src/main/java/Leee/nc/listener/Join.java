@@ -1,6 +1,6 @@
-package Leee.nc.listener;
+package leee.nc.listener;
 
-import Leee.nc.Main;
+import leee.nc.Main;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
