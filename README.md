@@ -10,24 +10,25 @@ A Minecraft Plugin that changes a Players name color on their command.
 Usage: `/nc color or /nc format-color`  
 Example: `/nc bold-aqua`  
 
-|Colors         |Format          |
-|---------------|----------------|
-|`AQUA`         |`BOLD`          |
-|`BLACK`        |`ITALIC`        |
-|`BLUE`         |`STRIKETHROUGH` |
-|`DARK_AQUA`    |`UNDERLINE`     |
-|`DARK_BLUE`    |                |
-|`DARK_GRAY`    |                |
-|`DARK_GREEN`   |                |
-|`DARK_PURPLE`  |                |
-|`DARK_RED`     |                |
-|`GOLD`         |                |
-|`GRAY`         |                |
-|`GREEN`        |                |
-|`LIGHT_PURPLE` |                |
-|`RED`          |                |
-|`WHITE`        |                |
-|`YELLOW`       |                |
+|Colors          |Format          |
+|----------------|----------------|
+|`AQUA`          |`BOLD`          |
+|`BLACK`         |`ITALIC`        |
+|`BLUE`          |`STRIKETHROUGH` |
+|`DARK_AQUA`     |`UNDERLINE`     |
+|`DARK_BLUE`     |                |
+|`DARK_GRAY`     |                |
+|`DARK_GREEN `   |                |
+|`DARK_PURPLE`   |                |
+|`DARK_RED`      |                |
+|`GOLD`          |                |
+|`GRAY`          |                |
+|`GREEN`         |                |
+|`LIGHT_PURPLE`  |                |
+|`RED`           |                |
+|`WHITE`         |                |
+|`YELLOW`        |                |
+|`RAINBOW`       |                |
 
 Player name format is saved in the config file via the Playername:
 ```
