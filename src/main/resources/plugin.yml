@@ -1,8 +1,8 @@
 name: LeeesNC
 version: 10.1.0
 main: Leee.nc.Main
-api-version: 1.12
-authors: [Nate, Legault]
+api-version: 1.16
+authors: [Nate, Legault, AlexProgrammerDE]
 description: Leees Name Colour Plugin
 website: https://www.6b6t.org
 commands:
