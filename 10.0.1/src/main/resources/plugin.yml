@@ -1,8 +1,0 @@
-name: LeeesNC
-version: ${project.version}
-main: leee.nc.Main
-api-version: 1.13
-load: STARTUP
-authors: [Nate, Legault]
-description: Leees Name Colour Plugin
-website: http://6b6t.org
