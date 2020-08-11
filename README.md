@@ -1,6 +1,7 @@
 # LeeesNC
 
-<a href="https://github.com/blockparole/LeeesNC/releases/latest" alt="Download"><img src="https://img.shields.io/github/downloads/blockparole/LeeesNC/latest/total.svg?label=download%20latest&style=popout-square" /></a>
+[![discord](https://discord.com/api/guilds/683053832694923319/embed.png)](https://discord.gg/WWm35Tc)
+ <a href="https://github.com/blockparole/LeeesNC/releases/latest" alt="Download"><img src="https://img.shields.io/github/downloads/blockparole/LeeesNC/latest/total.svg?label=download%20latest&style=popout-square" /></a>
 <a href="https://github.com/blockparole/LeeesNC" alt="Download"><img src="https://img.shields.io/github/languages/code-size/blockparole/LeeesNC.svg?label=repo%20size&style=popout-square" /></a>
 
 A Minecraft Plugin that changes a Players name color on their command.  
