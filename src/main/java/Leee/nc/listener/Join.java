@@ -1,6 +1,6 @@
 package Leee.nc.listener;
 
-import Leee.nc.Main;
+import Leee.nc.LeeesNC;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -10,8 +10,8 @@ public class Join implements Listener {
     @EventHandler
     public void onJoin(PlayerJoinEvent e) {
         Player player = e.getPlayer();
-        if (Main.getPlugin(Main.class).getConfig().getString(e.getPlayer().getName()) != null) {
-            player.setDisplayName(Main.getPlugin(Main.class).getConfig().getString(player.getName()));
+        if (Leee.nc.LeeesNC.getPlugin(LeeesNC.class).getConfig().getString(e.getPlayer().getName()) != null) {
+            player.setDisplayName(LeeesNC.getPlugin(LeeesNC.class).getConfig().getString(player.getName()));
         }
 
     }

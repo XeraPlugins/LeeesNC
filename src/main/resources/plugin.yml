@@ -1,6 +1,6 @@
 name: LeeesNC
-version: 10.1.0
-main: Leee.nc.Main
+version: 10.2.0
+main: Leee.nc.LeeesNC
 api-version: 1.16
 authors: [Nate, Legault, AlexProgrammerDE]
 description: Leees Name Colour Plugin
@@ -9,6 +9,11 @@ commands:
   nc:
     description: Change your name color.
     aliases: [namecolor, namecolour]
+  ic:
+    description: Change your item color.
+    aliases: [itemcolor, itemcolour]
 permissions:
   Leee.nc:
     description: Gives access to changing name color via the /nc command
+  Leee.ic:
+    description: Gives access to changing item color via the /ic command
