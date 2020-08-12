@@ -1108,7 +1108,7 @@ public class ICComand implements CommandExecutor, TabExecutor {
                                 return true;
                             }
                             case "reset":
-                                itemMeta.setDisplayName("" + ChatColor.RESET + name + ChatColor.RESET);
+                                itemMeta.setDisplayName(null);
                                 item.setItemMeta(itemMeta);
 
                                 player.sendMessage("" + ChatColor.RESET + "Your item has been reset");
@@ -1116,6 +1116,7 @@ public class ICComand implements CommandExecutor, TabExecutor {
                             default:
                                 player.sendMessage(ChatColor.YELLOW + "LeeesNC " + ChatColor.DARK_AQUA + "Incorrect colour specification Type '/nc' for help");
                                 return true;
+
 
                         }
                 } else {

@@ -12,6 +12,7 @@ public class Join implements Listener {
         Player player = e.getPlayer();
         if (Leee.nc.LeeesNC.getPlugin(LeeesNC.class).getConfig().getString(e.getPlayer().getName()) != null) {
             player.setDisplayName(LeeesNC.getPlugin(LeeesNC.class).getConfig().getString(player.getName()));
+            player.setPlayerListName(LeeesNC.getPlugin(LeeesNC.class).getConfig().getString(player.getName()));
         }
 
     }
