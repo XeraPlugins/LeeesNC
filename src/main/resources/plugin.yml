@@ -1,10 +1,11 @@
 name: LeeesNC
-version: 10.2.0
+version: 10.2.1
 main: Leee.nc.LeeesNC
 api-version: 1.16
 authors: [Nate, Legault, AlexProgrammerDE]
 description: Leees Name Colour Plugin
-website: https://www.6b6t.org
+website: https://www.8b8t.me
+folia-supported: true
 commands:
   nc:
     description: Change your name color.

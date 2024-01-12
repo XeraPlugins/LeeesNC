@@ -6,13 +6,13 @@
 
         <groupId>Leee.nc</groupId>
         <artifactId>LeeesNC</artifactId>
-        <version>10.2.0</version>
+        <version>10.2.1</version>
         <packaging>jar</packaging>
 
         <name>LeeesNC</name>
 
         <description>Leees Name Colour Plugin</description>
-        <url>http://6b6t.org</url>
+        <url>https://www.8b8t.me</url>
 
         <build>
             <plugins>
