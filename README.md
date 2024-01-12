@@ -38,7 +38,9 @@ Leee: §4Leee§r
 
 ---
 
-permission: Leee.nc
+permissions: 
+Leee.nc
+Leee.ic
 
 Spigot name colour plugin for anarchy servers
 Please join my discord https://discord.gg/c3mcgHqbMV and ask me Leeewith3Es before you make your own version or if you need help
