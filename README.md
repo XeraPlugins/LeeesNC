@@ -1,6 +1,6 @@
 # LeeesNC
 
-[![discord](https://discord.com/api/guilds/683053832694923319/embed.png)](https://discord.gg/WWm35Tc)
+[![discord](https://discord.com/api/guilds/683053832694923319/embed.png)](https://discord.gg/73U8q4XXZq)
  <a href="https://github.com/blockparole/LeeesNC/releases/latest" alt="Download"><img src="https://img.shields.io/github/downloads/blockparole/LeeesNC/latest/total.svg?label=download%20latest&style=popout-square" /></a>
 <a href="https://github.com/blockparole/LeeesNC" alt="Download"><img src="https://img.shields.io/github/languages/code-size/blockparole/LeeesNC.svg?label=repo%20size&style=popout-square" /></a>
 
