@@ -1114,7 +1114,7 @@ public class ICComand implements CommandExecutor, TabExecutor {
                                 player.sendMessage("" + ChatColor.RESET + "Your item has been reset");
                                 return true;
                             default:
-                                player.sendMessage(ChatColor.YELLOW + "LeeesNC " + ChatColor.DARK_AQUA + "Incorrect colour specification Type '/nc' for help");
+                                player.sendMessage(ChatColor.YELLOW + "LeeesNC " + ChatColor.DARK_AQUA + "Incorrect colour specification Type '/ic' for help");
                                 return true;
 
 
@@ -1161,21 +1161,21 @@ public class ICComand implements CommandExecutor, TabExecutor {
                     i++;
                 }
 
-                String newname = builder.toString();
+                String rainbow = builder.toString();
 
-                player.spigot().sendMessage(new TextComponent(ChatColor.BLUE + "--------------------------------------------"));
-                player.spigot().sendMessage(new TextComponent(ChatColor.AQUA + "(( LeeesNC ))"));
-                player.spigot().sendMessage(new TextComponent(ChatColor.YELLOW + "(( /ic <colour> <type-colour> ))"));
-                player.spigot().sendMessage(new TextComponent(ChatColor.YELLOW + "(( /ic reset to reset your name ))"));
-                player.spigot().sendMessage(new TextComponent(ChatColor.AQUA + "(( Types ))"));
-                player.spigot().sendMessage(new ComponentBuilder("(( ").color(ChatColor.YELLOW).append("underline").color(ChatColor.RESET).underlined(true).event(new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, "/ic underline-")).append("   ").color(ChatColor.RESET).underlined(false).append("underline-bold").underlined(true).bold(true).color(ChatColor.BOLD).event(new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, "/ic underline-bold-")).append(" ))").underlined(false).bold(false).color(ChatColor.RESET).color(ChatColor.YELLOW).create());
-                player.spigot().sendMessage(new ComponentBuilder("(( ").color(ChatColor.YELLOW).append("strike").color(ChatColor.RESET).strikethrough(true).event(new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, "/ic strike-")).append("   ").strikethrough(false).color(ChatColor.RESET).append("strike-bold").strikethrough(true).bold(true).event(new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, "/ic strike-bold-")).append(" ))").strikethrough(false).bold(false).color(ChatColor.RESET).color(ChatColor.YELLOW).create());
-                player.spigot().sendMessage(new ComponentBuilder("(( ").color(ChatColor.YELLOW).append("bold").color(ChatColor.RESET).bold(true).event(new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, "/ic bold-")).append("   ").bold(false).color(ChatColor.RESET).append("italic").italic(true).event(new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, "/ic italic-")).append("   ").italic(false).color(ChatColor.RESET).append("italic-bold").italic(true).bold(true).event(new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, "/ic italic-bold-")).append(" ))").italic(false).bold(false).color(ChatColor.RESET).color(ChatColor.YELLOW).create());
-                player.spigot().sendMessage(new TextComponent(ChatColor.AQUA + "(( Colours ))"));
-                player.spigot().sendMessage(new ComponentBuilder("(( ").color(ChatColor.YELLOW).append("red ").color(ChatColor.RED).event(new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, "/ic red")).append("dark-red ").color(ChatColor.DARK_RED).event(new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, "/ic dark-red")).append("green ").color(ChatColor.GREEN).event(new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, "/ic green")).append("dark-green ").color(ChatColor.DARK_GREEN).event(new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, "/ic dark-green")).append(newname).event(new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, "/ic rainbow")).append(" ))").color(ChatColor.YELLOW).create());
-                player.spigot().sendMessage(new ComponentBuilder("(( ").color(ChatColor.YELLOW).append("blue ").color(ChatColor.BLUE).event(new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, "/ic blue")).append("dark-blue ").color(ChatColor.DARK_BLUE).event(new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, "/ic dark-blue")).append("gold ").color(ChatColor.GOLD).event(new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, "/ic gold")).append("yellow ").color(ChatColor.YELLOW).event(new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, "/ic yellow")).append("black").color(ChatColor.BLACK).event(new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, "/ic black")).append(" ))").color(ChatColor.YELLOW).create());
-                player.spigot().sendMessage(new ComponentBuilder("(( ").color(ChatColor.YELLOW).append("purple ").color(ChatColor.DARK_PURPLE).event(new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, "/ic purple")).append("pink ").color(ChatColor.LIGHT_PURPLE).event(new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, "/ic pink")).append("gray ").color(ChatColor.GRAY).event(new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, "/ic gray")).append("aqua ").color(ChatColor.AQUA).event(new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, "/ic aqua")).append("dark-aqua ").color(ChatColor.DARK_AQUA).event(new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, "/ic dark-aqua")).append("white").color(ChatColor.WHITE).event(new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, "/ic white")).append(" ))").color(ChatColor.YELLOW).create());
-                player.spigot().sendMessage(new TextComponent(ChatColor.BLUE + "--------------------------------------------"));
+                player.spigot().sendMessage(new TextComponent(c("&9--------------------------------------------")));
+                player.spigot().sendMessage(new TextComponent(c("&b(( LeeesNC ))")));
+                player.spigot().sendMessage(new TextComponent(c("&e(( /ic <colour> <type-colour> ))")));
+                player.spigot().sendMessage(new TextComponent(c("&e(( /ic reset to reset your name ))")));
+                player.spigot().sendMessage(new TextComponent(c("&b(( Types ))")));
+                player.spigot().sendMessage(new ComponentBuilder(c("&e(( &r&nunderline&r ")).event(new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, "/ic underline-")).append(c("&n&lunderline-bold&r")).event(new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, "/ic underline-bold-")).append(c("&r &e))")).create());
+                player.spigot().sendMessage(new ComponentBuilder(c("&e(( &r&mstrike&r ")).event(new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, "/ic strike-")).append(c("&m&lstrike-bold&r")).event(new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, "/ic strike-bold-")).append(c("&r &e))")).create());
+                player.spigot().sendMessage(new ComponentBuilder(c("&e(( &r&lbold&r ")).event(new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, "/ic bold-")).append(c("&oitalic&r ")).event(new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, "/ic italic-")).append(c("&n&litalic-bold")).event(new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, "/ic italic-bold-")).append(c("&r &e))")).create());
+                player.spigot().sendMessage(new TextComponent(c("&b(( Colours ))")));
+                player.spigot().sendMessage(new ComponentBuilder(c("&e(( &cred&r ")).event(new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, "/ic red")).append(c("&4dark-red ")).event(new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, "/ic dark-red")).append(c("&agreen ")).event(new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, "/ic green")).append(c("&2dark-green ")).event(new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, "/ic dark-green")).append(rainbow).event(new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, "/ic rainbow")).append(c("&r &e))")).create());
+                player.spigot().sendMessage(new ComponentBuilder(c("&e(( &9blue&r ")).event(new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, "/ic blue")).append(c("&1dark-blue ")).event(new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, "/ic dark-blue")).append(c("&6gold ")).event(new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, "/ic gold")).append(c("&eyellow ")).event(new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, "/ic yellow")).append(c("&0black")).event(new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, "/ic black")).append(c("&r &e))")).create());
+                player.spigot().sendMessage(new ComponentBuilder(c("&e(( &5purple&r " )).event(new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, "/ic purple")).append(c("&dpink ")).event(new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, "/ic pink")).append(c("&7gray ")).event(new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, "/ic gray")).append(c("&baqua ")).event(new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, "/ic aqua")).append(c("&3dark-aqua ")).event(new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, "/ic dark-aqua")).append(c("&fwhite")).event(new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, "/ic white")).append(c("&r &e))")).create());
+                player.spigot().sendMessage(new TextComponent(c("&9--------------------------------------------")));
                 return true;
             }
         }
@@ -1254,5 +1254,9 @@ public class ICComand implements CommandExecutor, TabExecutor {
         }
 
         return builder.toString();
+    }
+
+    private String c(String text) {
+        return ChatColor.translateAlternateColorCodes('&', text);
     }
 }
