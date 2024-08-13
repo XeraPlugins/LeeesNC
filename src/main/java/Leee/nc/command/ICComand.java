@@ -1124,7 +1124,7 @@ public class ICComand implements CommandExecutor, TabExecutor {
                     }
 
             } else {
-                player.sendMessage(ChatColor.YELLOW + "LeeesNC " + ChatColor.DARK_AQUA + "You must vote for the server to use this command. Type /vote to vote.");
+                player.sendMessage(ChatColor.YELLOW + "LeeesNC " + ChatColor.DARK_AQUA + "You must donate to use /ic please visit https://donate.8b8t.me and consider donating");
                 return true;
             }
         } else {
