@@ -1498,7 +1498,7 @@ public class NCCommand implements CommandExecutor, TabExecutor {
 
 
                 } else {
-                    player.sendMessage(ChatColor.YELLOW + "LeeesNC " + ChatColor.DARK_AQUA + "You must donate to the server to use this command. Type /donate to donate.");
+                    player.sendMessage(ChatColor.YELLOW + "LeeesNC " + ChatColor.DARK_AQUA + "You must vote for the server to use this command. Type /vote to vote.");
                     return true;
                 }
             } else {
